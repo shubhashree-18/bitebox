@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BITEBOX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body { background:#9dccfa; }
+.section { display:none; }
+
+.services-section {
+  background: linear-gradient(135deg,#fff1eb,#ace0f9);
+  padding:80px 0;
+}
+
+.service-card {
+  background:#ffffff;
+  border-radius:15px;
+  padding:30px;
+  height:100%;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+.service-icon { font-size:28px; color:#ff4d4d; }
+
+.menu-card, .info-card {
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.login-box {
+  max-width:400px;
+  margin:auto;
+  background:#38ddf3;
+  padding:40px;
+  border-radius:12px;
+}
+
+/* DELIVERY notification badge */
+.delivery-badge{
+  position:absolute;
+  top:-4px;
+  right:-10px;
+  font-size:10px;
+  padding:4px 6px;
+  background:#ff6b6b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar bg-white shadow-sm px-3">
+<img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" height="40">
+<a class="navbar-brand fw-bold text-primary ms-2" href="#" onclick="showSection('home')">BITEBOX</a>
+
+<div class="ms-auto">
+<a class="nav-link d-inline mx-2" onclick="showSection('services')">SERVICES</a>
+<a class="nav-link d-inline mx-2" onclick="showSection('about')">ABOUT</a>
+
+<!-- DELIVERY WITH BADGE -->
+<a class="nav-link d-inline mx-2 position-relative" onclick="showSection('delivery')">
+  DELIVERY
+  <span class="badge rounded-pill delivery-badge" id="deliveryCount">5</span>
+</a>
+
+<a class="nav-link d-inline mx-2" onclick="showSection('branch')">BRANCH</a>
+<a class="nav-link d-inline mx-2" onclick="showSection('contact')">CONTACT</a>
+<a class="nav-link d-inline mx-2" onclick="showSection('login')">LOGIN</a>
+</div>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="container py-5 section" style="display:block">
+<div class="row align-items-center">
+<div class="col-md-6">
+<h1 class="text-primary">100+ HAPPY CUSTOMERS</h1>
+<span class="fw-bold">Kindly Welcome You!</span>
+<p>BiteBox is designed to make food ordering simple, fast, and enjoyable.</p>
+<button class="btn btn-primary" onclick="showSection('menu')">Order Now</button>
+</div>
+<div class="col-md-6 text-center">
+<img src="https://i.pinimg.com/564x/f1/06/57/f10657a7ed5d48e2ea9cd691903bd2b5.jpg" class="img-fluid">
+</div>
+</div>
+</div>
+
+<!-- MENU -->
+<div id="menu" class="container py-5 section">
+  <h3 class="text-center mb-4">🍽 Our Menu</h3>
+
+  <div class="row g-4">
+
+    <div class="col-md-3"><div class="menu-card">🍕 Veg Pizza – ₹99</div></div>
+    <div class="col-md-3"><div class="menu-card">🍕 Chicken Pizza – ₹129</div></div>
+    <div class="col-md-3"><div class="menu-card">🍔 Veg Burger – ₹119</div></div>
+    <div class="col-md-3"><div class="menu-card">🍔 Chicken Burger – ₹100</div></div>
+
+    <div class="col-md-3"><div class="menu-card">🌯 Shawarma – ₹99</div></div>
+    <div class="col-md-3"><div class="menu-card">🍗 Fried Chicken – ₹145</div></div>
+    <div class="col-md-3"><div class="menu-card">🍟 French Fries – ₹99</div></div>
+    <div class="col-md-3"><div class="menu-card">🥪 Sandwich – ₹119</div></div>
+
+    <div class="col-md-3"><div class="menu-card">🍝 Pasta – ₹120</div></div>
+    <div class="col-md-3"><div class="menu-card">🍜 Noodles – ₹109</div></div>
+    <div class="col-md-3"><div class="menu-card">🍚 Veg Fried Rice – ₹140</div></div>
+    <div class="col-md-3"><div class="menu-card">🍚 Chicken Fried Rice – ₹145</div></div>
+
+    <div class="col-md-3"><div class="menu-card">🥗 Green Salad – ₹129</div></div>
+    <div class="col-md-3"><div class="menu-card">🥗 Caesar Salad – ₹179</div></div>
+    <div class="col-md-3"><div class="menu-card">🧀 Cheese Nachos – ₹149</div></div>
+    <div class="col-md-3"><div class="menu-card">🌮 Tacos – ₹169</div></div>
+
+    <div class="col-md-3"><div class="menu-card">🥤 Soft Drinks – ₹59</div></div>
+    <div class="col-md-3"><div class="menu-card">🥤 Fresh Juice – ₹89</div></div>
+    <div class="col-md-3"><div class="menu-card">🍨 Ice Cream – ₹99</div></div>
+    <div class="col-md-3"><div class="menu-card">🍰 Chocolate Cake – ₹149</div></div>
+      <div class="col-md-3"><div class="menu-card">🥞 Plain Dosa – ₹70</div></div>
+  <div class="col-md-3"><div class="menu-card">🧀 Masala Dosa – ₹99</div></div>
+  <div class="col-md-3"><div class="menu-card">🥞 Ghee Roast – ₹80</div></div>
+  <div class="col-md-3"><div class="menu-card">🍚 Idli (4 pcs) – ₹60</div></div>
+
+  <div class="col-md-3"><div class="menu-card">🍚 Idli Vada Combo – ₹50</div></div>
+  <div class="col-md-3"><div class="menu-card">🥣 Sambar Idli – ₹40</div></div>
+  <div class="col-md-3"><div class="menu-card">🥣 Pongal – ₹45</div></div>
+  <div class="col-md-3"><div class="menu-card">🍛 Veg Meals – ₹149</div></div>
+
+  <div class="col-md-3"><div class="menu-card">🍛 Mini Meals – ₹119</div></div>
+  <div class="col-md-3"><div class="menu-card">🍛 Lemon Rice – ₹20</div></div>
+  <div class="col-md-3"><div class="menu-card">🍛 Curd Rice – ₹30</div></div>
+  <div class="col-md-3"><div class="menu-card">🍛 Tomato Rice – ₹49</div></div>
+
+  <div class="col-md-3"><div class="menu-card">🍗 Chicken Biryani – ₹120</div></div>
+  <div class="col-md-3"><div class="menu-card">🍗 Mutton Biryani – ₹180</div></div>
+  <div class="col-md-3"><div class="menu-card">🍗 Chicken Chettinad – ₹279</div></div>
+  <div class="col-md-3"><div class="menu-card">🍗 Pepper Chicken – ₹169</div></div>
+
+  <!-- CHINESE -->
+  <div class="col-md-3"><div class="menu-card">🍜 Veg Hakka Noodles – ₹159</div></div>
+  <div class="col-md-3"><div class="menu-card">🍜 Chicken Hakka Noodles – ₹199</div></div>
+  <div class="col-md-3"><div class="menu-card">🍚 Veg Fried Rice – ₹149</div></div>
+  <div class="col-md-3"><div class="menu-card">🍚 Chicken Fried Rice – ₹199</div></div>
+
+  <div class="col-md-3"><div class="menu-card">🥟 Veg Momos – ₹129</div></div>
+  <div class="col-md-3"><div class="menu-card">🥟 Chicken Momos – ₹159</div></div>
+  <div class="col-md-3"><div class="menu-card">🍗 Gobi Manchurian – ₹139</div></div>
+  <div class="col-md-3"><div class="menu-card">🍗 Chicken Manchurian – ₹189</div></div>
+
+  <div class="col-md-3"><div class="menu-card">🍤 Chilli Chicken – ₹219</div></div>
+  <div class="col-md-3"><div class="menu-card">🍤 Chilli Paneer – ₹199</div></div>
+  <div class="col-md-3"><div class="menu-card">🍲 Hot & Sour Soup – ₹99</div></div>
+  <div class="col-md-3"><div class="menu-card">🍲 Sweet Corn Soup – ₹39</div></div>
+
+  </div>
+</div>
+
+
+
+<div id="services" class="services-section section">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-3"><div class="service-card"><i class="bi bi-truck service-icon"></i><h6>Free Delivery</h6></div></div>
+<div class="col-md-3"><div class="service-card"><i class="bi bi-percent service-icon"></i><h6>Daily Deals</h6></div></div>
+<div class="col-md-3"><div class="service-card"><i class="bi bi-clock-history service-icon"></i><h6>Live Tracking</h6></div></div>
+<div class="col-md-3"><div class="service-card"><i class="bi bi-shield-check service-icon"></i><h6>Secure Payments</h6></div></div>
+</div>
+</div>
+</div>
+
+<div id="about" class="container py-5 section">
+<div class="info-card">
+<h4>About BITEBOX</h4>
+<p>Founded: 2020</p>
+<p>Founder: RPS</p>
+</div>
+</div>
+
+
+
+<div id="delivery" class="container py-5 section">
+<div class="row g-4">
+<div class="col-md-6">
+<div class="info-card">
+<h5>😊 Happy Customers of BITEBOX</h5>
+<p>⭐ ⭐ ⭐ ⭐ ⭐  
+        "Super fast delivery! Food arrived hot and fresh. BiteBox never disappoints."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  
+        "User-friendly app and excellent service. I order almost every weekend."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  
+        "Affordable prices with amazing combo offers. Worth every rupee."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  prasath32@gmail.com
+        "Customer support responded immediately and solved my issue."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  priyalotus1416@gmail.com
+        "Best food delivery experience in my area. Highly recommended!"</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  rohinithulasirajan1715@gmail.com
+        "Live order tracking feature is very helpful. Loved it!"</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  pratheebanirojkumar3007@gmail.com
+        "Quality food, on-time delivery and friendly delivery partners."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  subarekanth1718@yahoo.com
+        "First order bonus was a great surprise. Will continue using BiteBox."</p>
+
+        <p>⭐ ⭐ ⭐ ⭐ ⭐  swethasriharishdeva@gmail.com
+        "Clean packaging and hygienic delivery. Very satisfied."</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="info-card text-center">
+<h5>🚚 Live Orders</h5>
+<h2 class="text-success">1715 Orders Processing</h2>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- BRANCH -->
+<div id="branch" class="container py-5 section">
+<h4 class="mb-3">🏢 Our Branches</h4>
+<ul class="list-group">
+<li class="list-group-item">Trichy – kiliyur</li>
+<li class="list-group-item">Trichy – Annavalaivu</li>
+<li class="list-group-item">pudukottai – AnnaVasal</li>
+<li class="list-group-item">Trichy – MalaiKovil</li>
+<li class="list-group-item">Trichy – Viragai</li>
+<li class="list-group-item">Trichy – Thiruverumbur</li>
+</ul>
+</div>
+
+
+<!-- CONTACT -->
+<div id="contact" class="container py-5 section">
+<div class="info-card">
+<h4>📞 Contact Us</h4>
+<p>Phone: +91 98765 43210</p>
+<p>Email: support2020@bitebox.com</p>
+</div>
+</div>
+
+<!-- LOGIN WITH SPINNER -->
+<div id="login" class="container py-5 section">
+<div class="login-box text-center">
+
+<h4>Login</h4>
+<input class="form-control mb-3" placeholder="Phone Number">
+<input class="form-control mb-3" placeholder="OTP">
+
+<button class="btn btn-primary w-100" id="loginBtn" onclick="loginProcess()">Login</button>
+
+<div id="loginSpinner" class="mt-3" style="display:none;">
+<div class="spinner-border text-primary"></div>
+<p class="mt-2">Logging in...</p>
+</div>
+
+<div id="loginSuccess" class="alert alert-success mt-3" style="display:none;">
+✅ Login Successful
+</div>
+
+</div>
+</div>
+
+<script>
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+document.getElementById(id).style.display='block';
+}
+
+function loginProcess(){
+document.getElementById("loginBtn").style.display="none";
+document.getElementById("loginSpinner").style.display="block";
+
+setTimeout(()=>{
+document.getElementById("loginSpinner").style.display="none";
+document.getElementById("loginSuccess").style.display="block";
+},2000);
+}
+
+// delivery notification count
+document.getElementById("deliveryCount").innerText = 5;
+</script>
+
+</body>
+</html>
